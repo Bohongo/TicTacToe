@@ -55,4 +55,11 @@ it("Should return X because first one to do is X", () =>{
   const Board2 = new Board();
   Board2.addMove(1);
   expect(Board2.boardValues[1]).toBe('X');
-})
+});
+
+it("Should return a valid move", () =>{
+    const Board2 = new Board();
+    Board2.boardValues =['N', 'N', 'N', 'N', 'N', 'N', 'N', 'N', 'N'];
+    Board2.move(0);
+    expect(Board2.boardValues[0]).toBe('X');
+}) 
