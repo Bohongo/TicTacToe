@@ -9,26 +9,52 @@
 </head>
 
 <body>
-  <div id="container">
-    <button type="button" id="newGame" class="btn btn-warning " href="# ">New Game</button>
-    <table class="board ">
-      <tr>
-        <td class="square " id="box1 "></td>
-        <td class="square " id="box2 "></td>
-        <td class="square " id="box3 "></td>
-      </tr>
-      <tr>
-        <td class="square " id="box4 "></td>
-        <td class="square " id="box5 "></td>
-        <td class="square " id="box6 "></td>
-      </tr>
-      <tr>
-        <td class="square " id="box7 "></td>
-        <td class="square " id="box8 "></td>
-        <td class="square " id="box9 "></td>
-      </tr>
-    </table>
+  <div class="grid-container">
+    <div class="row">
+      <div class="col-lg-12 title">
+        <h1 id="playerTitle">Player <span id="playerTurn">X</span>, it's your move</h1>
+      </div>
+    </div>
+    <div class="col-lg-4">
+
+    </div>
+    <div class="row">
+      <div class="col-lg-4">
+        <table class="board">
+          <tr>
+            <td class="square " id="box1 "></td>
+            <td class="square " id="box2 "></td>
+            <td class="square " id="box3 "></td>
+          </tr>
+          <tr>
+            <td class="square " id="box4 "></td>
+            <td class="square " id="box5 "></td>
+            <td class="square " id="box6 "></td>
+          </tr>
+          <tr>
+            <td class="square " id="box7 "></td>
+            <td class="square " id="box8 "></td>
+            <td class="square " id="box9 "></td>
+          </tr>
+        </table>
+      </div>
+      <div class="col-lg-3">
+        <div class="scores">
+
+          <p id="scoreTitle">Scores</p>
+          <p id="PlayerX">Player X:</p>
+          <p id="PlayerO">Player O:</p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12 playAgain">
+        <button type="button" name="button" class="btn btn-success" id="resetGame">Play Again</button>
+      </div>
+    </div>
   </div>
+
+  <!--<button type="button" id="newGame" class="btn btn-warning item4" href="# ">New Game</button>-->
 </body>
 
 </html>
