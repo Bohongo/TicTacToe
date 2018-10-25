@@ -7,6 +7,9 @@ const Board = class {
         if (this.columnCheck(boardValues, letter)) {
             return true;
         }
+        if (this.crossCheck(boardValues, letter)) {
+            return true;
+        }
         return false;
     }
 
@@ -31,6 +34,13 @@ const Board = class {
             return true;
         }
         if (boardValues[2] == letter && boardValues[5] == letter && boardValues[8] == letter) {
+            return true;
+        }
+        return false;
+    }
+
+    crossCheck(boardValues, letter) {
+        if (boardValues[0] == letter && boardValues[4] == letter && boardValues[8] == letter) {
             return true;
         }
         return false;

@@ -29,3 +29,8 @@ it("should return true for third column of x's", () => {
     const Board2 = new Board();
     expect(Board2.winCheck(['N', 'N', 'X', 'N', 'N', 'X', 'N', 'N', 'X'], 'X')).toBe(true);
 });
+
+it("should return true for downward slope of x's", () => {
+    const Board2 = new Board();
+    expect(Board2.winCheck(['X', 'N', 'N', 'N', 'X', 'N', 'N', 'N', 'X'], 'X')).toBe(true);
+});
