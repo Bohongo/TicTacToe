@@ -1,0 +1,22 @@
+{
+  "name": "tictactoe",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bohongo/TicTacToe.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bohongo/TicTacToe/issues"
+  },
+  "homepage": "https://github.com/Bohongo/TicTacToe#readme",
+  "devDependencies": {
+    "jest": "^23.6.0"
+  }
+}
