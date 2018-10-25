@@ -9,6 +9,9 @@ Board.winCheck = function(boardValues, letter) {
     if (boardValues[6] == letter && boardValues[7] == letter && boardValues[8] == letter) {
         return true;
     }
+    if (boardValues[0] == letter && boardValues[3] == letter && boardValues[6] == letter) {
+        return true;
+    }
     return false;
 }
 
