@@ -5,12 +5,19 @@ const Game = class {
   }
 
   IncrementScore(Player) {
-    if (Player === "X") {
+    if (Player === 'X') {
       this.PlayerXScore++;
     } else {
       this.PlayerOScore++;
     }
   };
+  EndGame(Player){
+    if(Player === 'Draw'){
+      //HÉR ÞARF AÐ BREYTA INNERHTML
+
+    }
+    this.IncrementScore(Player);
+  }
 }
 
 module.exports = Game;
