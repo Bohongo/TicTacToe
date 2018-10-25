@@ -51,3 +51,8 @@ it("Should return true because the whole array is set to N", () => {
   const Board2 = new Board();
   expect(Board2.checkValidMove(1)).toBe(true);
 });
+it("Should return X because first one to do is X", () =>{
+  const Board2 = new Board();
+  Board2.addMove(1);
+  expect(Board2.boardValues[1]).toBe('X');
+})

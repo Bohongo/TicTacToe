@@ -1,6 +1,9 @@
+const instance = require("./player.js");
+
 const Board = class {
   constructor(){
     this.boardValues =['N','N','N','N','N','N','N','N','N'];
+    this.PlayerMove = new instance();
   }
 
     winCheck(letter) {
@@ -57,6 +60,9 @@ const Board = class {
       }
       return false;
     };
+    addMove(position){
+      this.boardValues[position] = this.PlayerMove.getPlayer();
+    }
 }
 
 module.exports = Board;
