@@ -43,6 +43,9 @@ const Board = class {
         if (boardValues[0] == letter && boardValues[4] == letter && boardValues[8] == letter) {
             return true;
         }
+        if (boardValues[2] == letter && boardValues[4] == letter && boardValues[6] == letter) {
+            return true;
+        }
         return false;
     }
 }
