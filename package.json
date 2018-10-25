@@ -2,21 +2,25 @@
   "name": "tictactoe",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "start": "node app.js",
+    "watch": "jest --watchAll"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Bohongo/TicTacToe.git"
   },
-  "author": "",
+  "author": "Bohongo",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Bohongo/TicTacToe/issues"
   },
   "homepage": "https://github.com/Bohongo/TicTacToe#readme",
   "devDependencies": {
-    "jest": "^23.6.0"
+    "express": "^4.16.4",
+    "jest": "^23.6.0",
+    "supertest": "^3.3.0"
   }
 }
