@@ -68,5 +68,6 @@ it("Should be a invalid move with X still in the same spot", () =>{
     const Board2 = new Board();
     Board2.boardValues =['X', 'N', 'N', 'N', 'N', 'N', 'N', 'N', 'N'];
     Board2.move(0);
+    Board2.move(0);
     expect(Board2.boardValues[0]).toBe('X');
 })
