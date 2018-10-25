@@ -19,3 +19,7 @@ it("should return true for first column of x's", () => {
 it("should return true for second column of x's", () => {
     expect(Board.winCheck(['N', 'X', 'N', 'N', 'X', 'N', 'N', 'X', 'O'], 'X')).toBe(true);
 });
+
+it("should return true for third column of x's", () => {
+    expect(Board.winCheck(['N', 'N', 'X', 'N', 'N', 'X', 'N', 'N', 'X'], 'X')).toBe(true);
+});
