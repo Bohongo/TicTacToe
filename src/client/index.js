@@ -8,6 +8,9 @@ $('.square').click(function() {
   }).then(function(data) {
     console.log(data);
     document.getElementById(id).innerHTML = data.Player.boardValues[id - 1];
+    if(data.Player.gameResult != ''){
+        alert(data.Player.player_move + " Win!");
+    }
   })
 });
 
