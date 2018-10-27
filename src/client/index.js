@@ -1,8 +1,8 @@
 console.log("CONNECTED");
-document.getElementById('board').addEventListener('click', move);
+document.getElementById('board').addEventListener('click', func);
 
 
-function move(e) {
+function func(e) {
   var id = e.target.id;
   console.log(e);
   console.log('id: ' +id);
@@ -11,11 +11,6 @@ function move(e) {
     return res.json();
   }).then(function(data){
     console.log(data);
-    /*if(data. == ""){
-      alert("Box already taken");
-    }
-    else{*/
-      document.getElementById(id).innerHTML = data.Player;
-    //}
+      document.getElementById(id).innerHTML = data.Player.boardValues[id - 1];
   })
 };

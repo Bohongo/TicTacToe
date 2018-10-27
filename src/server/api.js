@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const board = require("../logic/board");
+const Logic = require("../logic/gameLogic");
 
 
 router.get("/", (req, res) => {
@@ -15,7 +15,9 @@ router.options("/", (req, res) => {
 });
 
 router.get("/tictactoe/:box", (req, res) => {
-  res.status(200).send({ Player: "X" });
+  var x = {Player: Logic};
+  Logic.move(req.params.box);
+  res.status(200).send(x);
 });
 
 module.exports = router;

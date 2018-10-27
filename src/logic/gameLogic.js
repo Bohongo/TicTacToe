@@ -4,6 +4,7 @@ Logic.boardValues = ['', '', '', '', '', '', '', '', ''];
 Logic.player_move = "X";
 Logic.turnCounter = 0;
 
+
 Logic.winCheck = function(letter) {
     if (this.rowCheck(letter)) {
         return true;
@@ -61,10 +62,11 @@ Logic.checkValidMove = function(position) {
 };
 
 Logic.addMove = function(position) {
-    this.boardValues[position] = this.player_move;
+    this.boardValues[position-1] = this.player_move;
 }
 
 Logic.move = function(position) {
+  console.log("HELLO");
     if (this.checkValidMove(position)) {
         this.addMove(position);
         this.turnCounter++;
@@ -77,6 +79,7 @@ Logic.move = function(position) {
         console.log("Invalid, box already taken");
     }
 }
+
 
 Logic.Turn = function() {
     if (this.player_move === "X") {
