@@ -62,11 +62,10 @@ Logic.checkValidMove = function(position) {
 };
 
 Logic.addMove = function(position) {
-    this.boardValues[position-1] = this.player_move;
+    this.boardValues[position - 1] = this.player_move;
 }
 
 Logic.move = function(position) {
-  console.log("HELLO");
     if (this.checkValidMove(position)) {
         this.addMove(position);
         this.turnCounter++;

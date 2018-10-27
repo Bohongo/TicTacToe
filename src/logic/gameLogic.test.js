@@ -44,12 +44,12 @@ it("Should return true because the whole array is set to N", () => {
 });
 it("Should return X because first one to do is X", () => {
     Logic.addMove(1);
-    expect(Logic.boardValues[1]).toBe('X');
+    expect(Logic.boardValues[0]).toBe('X');
 });
 it("Should return a valid move", () => {
     Logic.boardValues = ['', '', '', '', '', '', '', '', ''];
     Logic.move(1);
-    expect(Logic.boardValues[1]).toBe('X');
+    expect(Logic.boardValues[0]).toBe('X');
 });
 it("Should be a invalid move with X still in the same spot", () => {
     Logic.boardValues = ['X', '', '', '', '', '', '', '', ''];
