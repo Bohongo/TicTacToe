@@ -1,14 +1,18 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: 'Press Start 2P', cursive;
 }
-
+h1 {
+  font-size: 25px;
+}
 body {
-  font-family: "Comic Sans MS", cursive, sans-serif;
   background: #F0F8FF;
 }
 
 table {
+  table-layout: fixed;
+  overflow: hidden;
   margin-left: auto;
   margin-right: auto;
   margin-top: 10%;
@@ -18,14 +22,17 @@ table {
 }
 
 td {
-  width: 33.333%;
-  border: 6px solid #222;
-  text-align: center;
+ border: 6px solid black;
+ font-size:25pt;
+ text-align: center;
+ height: 202px;
+ width: 202px;
+ text-shadow: 5px 5px black;
 }
+
 td::after {
   content: '';
   display: block;
-  margin-top: 100%;
 }
 
 td:first-of-type {

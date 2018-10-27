@@ -57,7 +57,7 @@ const Board = class {
         return false;
     }
     checkValidMove(position){
-      if(this.boardValues[position] === "N"){
+      if(this.boardValues[position-1] === "N"){
         return true;
       }
       return false;
