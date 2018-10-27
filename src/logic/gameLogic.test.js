@@ -104,3 +104,16 @@ it("Should return O because O is the winner", () => {
     Logic.move(8);
     expect(Logic.move(6)).toBe('O');
 });
+
+it("Should return playerOScore 1", () => {
+  Logic.resetScores();
+  console.log(Logic.playerOscore);
+  Logic.resetBoard();
+  Logic.move(1);
+  Logic.move(4);
+  Logic.move(2);
+  Logic.move(5);
+  Logic.move(8);
+  Logic.move(6);
+  expect(Logic.playerOscore).toBe(1);
+});
