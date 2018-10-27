@@ -1,6 +1,20 @@
-const app = require("./src/server/api");
-const PORT = process.env.PORT || 3000;
+const express = require("express");
+const path = require("path");
+const app = express();
+const api = require("./src/server/api");
 
-app.listen(PORT, () => {
-  console.log("Server running on port " + PORT);
+// Serve static files
+app.use(express.static(path.join(__dirname, "../", "dist")));
+
+// Use the API router
+app.use("/src/api", api);
+
+// Catch all other requests
+app.get("*", (req, res) => {
+  res.status(404).send({ error: "Not found" });
 });
+
+// Prettify the JSON responses (from the API)
+app.set("json spaces", 2);
+
+module.exports = app;
