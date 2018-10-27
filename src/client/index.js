@@ -10,12 +10,12 @@ function move(e) {
     console.log(res);
     return res.json();
   }).then(function(data){
-    conole.log(data);
-    if(data.true == "-1"){
+    console.log(data);
+    /*if(data. == ""){
       alert("Box already taken");
     }
-    else{
-      document.getElementById('id').innerHTML = data.PlayerMove.player_move;
-    }
+    else{*/
+      document.getElementById(id).innerHTML = data.Player;
+    //}
   })
 };

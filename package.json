@@ -6,10 +6,10 @@
   "scripts": {
     "dev": "nodemon",
     "test": "jest",
-    "start": "node server",
+    "start": "node server.js",
     "watch": "jest --watchAll",
     "build": "webpack",
-    "devser": "webpack-dev-server"
+    "devser": "webpack-dev-server --open"
   },
   "repository": {
     "type": "git",

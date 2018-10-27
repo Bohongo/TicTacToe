@@ -7,11 +7,11 @@ const api = require("./src/server/api");
 app.use(express.static(path.join(__dirname, "../", "dist")));
 
 // Use the API router
-app.use("/src/api", api);
+app.use("/api", api);
 
 // Catch all other requests
 app.get("*", (req, res) => {
-  res.status(404).send({ error: "Not found" });
+  res.status(404).send({ error: "Not found!!" });
 });
 
 // Prettify the JSON responses (from the API)
