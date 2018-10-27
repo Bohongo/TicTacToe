@@ -26,6 +26,12 @@ router.get("/tictactoe/:box", (req, res) => {
   res.status(200).send(x);
 });
 
+router.get("/reset", (req, res) => {
+  res.status(200).send({
+    reset: Logic.resetBoard()
+  });
+});
+
 
 module.exports = router;
 //module.exports = app;
