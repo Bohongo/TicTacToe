@@ -77,7 +77,7 @@ it("should return an empty board", () => {
   expect(Logic.boardValues).toEqual(['', '', '', '', '', '', '', '', '']);
 });
 it("should return x", () => {
-  Logic.Turn();
+  Logic.move(0);
   Logic.resetBoard();
   expect(Logic.player_move).toBe("X");
 });
@@ -87,4 +87,19 @@ it("should return 0", () => {
   Logic.move(2);
   Logic.resetBoard();
   expect(Logic.turnCounter).toBe(0);
+});
+
+it("Should return draw", () => {
+  Logic.turnCounter = 9;
+  expect(Logic.move('X')).toBe("draw");
+});
+
+it("Should return O because O is the winner", () => {
+  Logic.resetBoard();
+  Logic.move(1);
+  Logic.move(4);
+  Logic.move(2);
+  Logic.move(5);
+  Logic.move(8);
+  expect(Logic.move(6)).toBe('O');
 });

@@ -3,16 +3,24 @@ const Logic = new Object();
 Logic.boardValues = ['', '', '', '', '', '', '', '', ''];
 Logic.player_move = "X";
 Logic.turnCounter = 0;
+Logic.gameResult = "";
 
 
 Logic.winCheck = function(letter) {
   if (this.rowCheck(letter)) {
+    this.gameResult = this.player_move;
     return true;
   }
   if (this.columnCheck(letter)) {
-    return true;
+      this.gameResult = this.player_move;
+      return true;
   }
   if (this.crossCheck(letter)) {
+    this.gameResult = this.player_move;
+    return true;
+  }
+  if(this.turnCounter == 9) {
+    this.gameResult = "draw";
     return true;
   }
   return false;
@@ -66,20 +74,16 @@ Logic.addMove = function(position) {
 }
 
 Logic.move = function(position) {
-  console.log("HELLO");
   if (this.checkValidMove(position)) {
     this.addMove(position);
     this.turnCounter++;
-    if (this.winCheck(this.player_move)) {
-      this.Game.EndGame(this.player_move);
+  }
+  if(this.winCheck(this.player_move)) {
+      return this.gameResult;
     } else {
       this.Turn();
     }
-  } else {
-    console.log("Invalid, box already taken");
-  }
 }
-
 
 Logic.Turn = function() {
   if (this.player_move === "X") {
@@ -93,10 +97,10 @@ Logic.getPlayer = function() {
 }
 
 Logic.resetBoard = function() {
-  Logic.boardValues = ['', '', '', '', '', '', '', '', ''];
-  Logic.player_move = "X";
-  Logic.turnCounter = 0;
+  this.boardValues = ['', '', '', '', '', '', '', '', ''];
+  this.player_move = "X";
+  this.turnCounter = 0;
+  this.gameResult = "";
 }
-
 
 module.exports = Logic;
