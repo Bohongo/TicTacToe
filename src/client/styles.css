@@ -25,13 +25,14 @@ td {
  border: 6px solid black;
  font-size:25pt;
  text-align: center;
+ height: 202px;
+ width: 202px;
  text-shadow: 5px 5px black;
 }
 
 td::after {
   content: '';
   display: block;
-  margin-top: 100%;
 }
 
 td:first-of-type {
