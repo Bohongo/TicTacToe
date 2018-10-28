@@ -8,3 +8,11 @@ describe("OPTIONS /api", () => {
     });
   });
 
+  describe("GET /api", () => {
+    it("should return 405 status code and an error message", async () => {
+      const res = await request(app).get("/api");
+      expect(res.status).toBe(405);
+      expect(res.body).toHaveProperty("error");
+    });
+  });
+
