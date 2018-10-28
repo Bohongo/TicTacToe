@@ -2,6 +2,17 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
 module.exports = {
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: [
+          { loader: "style-loader" },
+          { loader: "css-loader" }
+        ]
+      }
+    ]
+},
   devServer: {
     port: 3000,
     open: true,
@@ -14,7 +25,7 @@ module.exports = {
       template: "./src/client/index.html"
     })
   ],
-  entry: './src/client/index.js',
+  entry: './src/client/bundle.js',
   output: {
     filename: 'main.js',
     path: path.resolve(__dirname, 'dist')
