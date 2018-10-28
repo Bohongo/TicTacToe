@@ -54,12 +54,12 @@ Logic.columnCheck = function(letter) {
 };
 
 Logic.incrementScore = function() {
-  if(this.gameResult == "X") {
-    this.playerXscore++;
-  }
-  if(this.gameResult == "O") {
-    this.playerOscore++;
-  }
+    if (this.gameResult == "X") {
+        this.playerXscore++;
+    }
+    if (this.gameResult == "O") {
+        this.playerOscore++;
+    }
 }
 
 Logic.crossCheck = function(letter) {
@@ -88,12 +88,12 @@ Logic.move = function(position) {
         if (this.checkValidMove(position)) {
             this.addMove(position);
             this.turnCounter++;
-        }
-        if (this.winCheck(this.player_move)) {
-            this.incrementScore();
-            return this.gameResult;
-        } else {
-            this.Turn();
+            if (this.winCheck(this.player_move)) {
+                this.incrementScore();
+                return this.gameResult;
+            } else {
+                this.Turn();
+            }
         }
     }
 };
@@ -111,8 +111,8 @@ Logic.getPlayer = function() {
 };
 
 Logic.resetScores = function() {
-  this.playerXscore = 0;
-  this.playerOscore = 0;
+    this.playerXscore = 0;
+    this.playerOscore = 0;
 }
 
 Logic.resetBoard = function() {
