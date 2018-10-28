@@ -32,6 +32,12 @@ router.get("/reset", (req, res) => {
   });
 });
 
+router.get("/resetscores", (req, res) => {
+  res.status(200).send({
+    reset: Logic.resetScores()
+  });
+});
+
 
 module.exports = router;
 //module.exports = app;
