@@ -1,5 +1,6 @@
 const  _ = require('lodash');
 document.getElementById('resetGame').addEventListener('click', reset);
+document.getElementById('resetScores').addEventListener('click', resetscores);
 var id = 0;
 $('.square').click(function() {
   id = $(this).attr('id');
@@ -15,10 +16,10 @@ $('.square').click(function() {
 });
 
 function checkWin(data) {
-  if(data.Player.gameResult == 'X' || data.Player.gameResult == 'O'){
-      $('#playerTitle').text("Player " + data.Player.player_move + " Wins!");
+  if (data.Player.gameResult == 'X' || data.Player.gameResult == 'O') {
+    $('#playerTitle').text("Player " + data.Player.player_move + " Wins!");
   }
-  if(data.Player.gameResult == 'draw') {
+  if (data.Player.gameResult == 'draw') {
     $('#playerTitle').text("Draw!");
   }
 }
@@ -29,5 +30,13 @@ function reset(e) {
     for (var i = 1; i <= 9; i++) {
       document.getElementById(i).innerHTML = '';
     }
+  })
+}
+
+function resetscores(e) {
+  fetch('/api/resetscores/').then(function(res) {
+    console.log(res);
+    $('#playerXscore').text("0");
+    $('#playerOscore').text("0");
   })
 }
