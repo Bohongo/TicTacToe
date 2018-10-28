@@ -1,3 +1,4 @@
+const  _ = require('lodash');
 document.getElementById('resetGame').addEventListener('click', reset);
 var id = 0;
 $('.square').click(function() {
