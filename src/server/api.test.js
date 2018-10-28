@@ -25,8 +25,15 @@ describe("OPTIONS /api", () => {
   });
 
   describe("GET /api/reset/", () => {
-    it("should return an object with the greeting attribute", async () => {
+    it("should return 200 status code", async () => {
       const res = await request(app).get("/api/reset");
+      expect(res.status).toBe(200);
+    });
+  });
+
+  describe("GET /api/resetscores/", () => {
+    it("should return an object with the greeting attribute", async () => {
+      const res = await request(app).get("/api/resetscores");
       expect(res.status).toBe(200);
     });
   });
