@@ -1,0 +1,103 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Press Start 2P', cursive;
+}
+h1 {
+  font-size: 25px;
+}
+body {
+  background: #F0F8FF;
+}
+
+table {
+  table-layout: fixed;
+  overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10%;
+  text-align: center;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+td {
+ border: 6px solid black;
+ font-size:25pt;
+ text-align: center;
+ height: 202px;
+ width: 202px;
+ text-shadow: 5px 5px black;
+}
+
+td::after {
+  content: '';
+  display: block;
+}
+
+td:first-of-type {
+  border-left-color: transparent;
+  border-top-color: transparent;
+}
+td:nth-of-type(2) {
+  border-top-color: transparent;
+}
+td:nth-of-type(3) {
+  border-right-color: transparent;
+  border-top-color: transparent;
+}
+tr:nth-of-type(3) td {
+  border-bottom-color: transparent;
+}
+
+.title {
+  text-align: center;
+  margin-left: 3%;
+}
+.scores {
+  text-align: center;
+  margin-top: 20%;
+}
+
+#scoreTitle {
+  font-size: 20px;
+}
+
+.playAgain {
+  margin-top: 1%;
+  text-align: center;
+}
+/*
+.board {
+  grid-row-start: 1;
+  grid-row-end: 2;
+  grid-column-start: 4;
+  grid-column-end: 5;
+}*/
+
+
+/*
+#newGame {
+  margin-left: 46.5%;
+  margin-top: 32%;
+  position: absolute;
+}
+
+.scores {
+  font-size: 20px;
+  position: absolute;
+  margin-left: 70%;
+  margin-top: 5%;
+}
+
+#scoresTitle {
+  font-size: 25px;
+}
+
+#playerTitle {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  margin-left: 35%;
+  margin-top: -5%;
+  position: absolute;
+}
+*/
