@@ -1,42 +1,45 @@
-const  _ = require('lodash');
+const _ = require('lodash');
 document.getElementById('resetGame').addEventListener('click', reset);
 document.getElementById('resetScores').addEventListener('click', resetscores);
 var id = 0;
 $('.square').click(function() {
-  id = $(this).attr('id');
-  fetch('/api/tictactoe/' + id).then(function(res) {
-    return res.json();
-  }).then(function(data) {
-    $('#playerTitle').text("Player " + data.Player.player_move + ", it's your move");
-    $('#playerOscore').text(data.Player.playerOscore);
-    $('#playerXscore').text(data.Player.playerXscore);
-    document.getElementById(id).innerHTML = data.Player.boardValues[id - 1];
-    checkWin(data);
-  })
+    id = $(this).attr('id');
+    fetch('/api/tictactoe/' + id).then(function(res) {
+        return res.json();
+    }).then(function(data) {
+        $('#playerTitle').text("Player " + data.Player.player_move + ", it's your move");
+        $('#playerOscore').text(data.Player.playerOscore);
+        $('#playerXscore').text(data.Player.playerXscore);
+        for (var i = 0; i < data.Player.boardValues.length; i++) {
+            document.getElementById(i + 1).innerHTML = data.Player.boardValues[i];
+        }
+        //document.getElementById(id).innerHTML = data.Player.boardValues[id - 1];
+        checkWin(data);
+    })
 });
 
 function checkWin(data) {
-  if (data.Player.gameResult == 'X' || data.Player.gameResult == 'O') {
-    $('#playerTitle').text("Player " + data.Player.player_move + " Wins!");
-  }
-  if (data.Player.gameResult == 'draw') {
-    $('#playerTitle').text("Draw!");
-  }
+    if (data.Player.gameResult == 'X' || data.Player.gameResult == 'O') {
+        $('#playerTitle').text("Player " + data.Player.player_move + " Wins!");
+    }
+    if (data.Player.gameResult == 'draw') {
+        $('#playerTitle').text("Draw!");
+    }
 }
 
 function reset(e) {
-  $('#playerTitle').text("Player X, it's your move");
-  fetch('/api/reset/').then(function(res) {
-    for (var i = 1; i <= 9; i++) {
-      document.getElementById(i).innerHTML = '';
-    }
-  })
+    $('#playerTitle').text("Player X, it's your move");
+    fetch('/api/reset/').then(function(res) {
+        for (var i = 1; i <= 9; i++) {
+            document.getElementById(i).innerHTML = '';
+        }
+    })
 }
 
 function resetscores(e) {
-  fetch('/api/resetscores/').then(function(res) {
-    console.log(res);
-    $('#playerXscore').text("0");
-    $('#playerOscore').text("0");
-  })
+    fetch('/api/resetscores/').then(function(res) {
+        console.log(res);
+        $('#playerXscore').text("0");
+        $('#playerOscore').text("0");
+    })
 }
