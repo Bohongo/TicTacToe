@@ -10,7 +10,14 @@ h1 {
 body {
   background: #F0F8FF;
 }
-
+table.leaderboard{
+  width: 100%;
+  margin-top: 10%;
+  table-layout: fixed;
+  overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
+}
 table.game-board {
   table-layout: fixed;
   overflow: hidden;
@@ -51,6 +58,9 @@ table.game-board tr:nth-of-type(3) td {
   border-bottom-color: transparent;
 }
 
+.leaderboard-title{
+  margin-top: 10%;
+}
 .container{
   width: 94%
 }
