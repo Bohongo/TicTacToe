@@ -16,3 +16,10 @@ describe("OPTIONS /api", () => {
     });
   });
 
+  describe("GET /api/tictactie/{box}", () => {
+    it("should return an object with the greeting attribute", async () => {
+      const res = await request(app).get("/api/tictactoe/1");
+      expect(res.status).toBe(200);
+      expect(res.body).toHaveProperty("Player");
+    });
+  });
