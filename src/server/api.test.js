@@ -16,10 +16,17 @@ describe("OPTIONS /api", () => {
     });
   });
 
-  describe("GET /api/tictactie/{box}", () => {
-    it("should return an object with the greeting attribute", async () => {
+  describe("GET /api/tictactoe/{box}", () => {
+    it("should return an object with the Player attribute", async () => {
       const res = await request(app).get("/api/tictactoe/1");
       expect(res.status).toBe(200);
       expect(res.body).toHaveProperty("Player");
+    });
+  });
+
+  describe("GET /api/reset/", () => {
+    it("should return an object with the greeting attribute", async () => {
+      const res = await request(app).get("/api/reset");
+      expect(res.status).toBe(200);
     });
   });
