@@ -4,7 +4,8 @@ Logic.boardValues = ['', '', '', '', '', '', '', '', ''];
 Logic.player_move = "X";
 Logic.turnCounter = 0;
 Logic.gameResult = "";
-
+Logic.playerXscore = 0;
+Logic.playerOscore = 0;
 
 Logic.winCheck = function(letter) {
     if (this.rowCheck(letter)) {
@@ -52,6 +53,15 @@ Logic.columnCheck = function(letter) {
     return false;
 };
 
+Logic.incrementScore = function() {
+    if (this.gameResult == "X") {
+        this.playerXscore++;
+    }
+    if (this.gameResult == "O") {
+        this.playerOscore++;
+    }
+}
+
 Logic.crossCheck = function(letter) {
     if (this.boardValues[0] == letter && this.boardValues[4] == letter && this.boardValues[8] == letter) {
         return true;
@@ -78,11 +88,12 @@ Logic.move = function(position) {
         if (this.checkValidMove(position)) {
             this.addMove(position);
             this.turnCounter++;
-        }
-        if (this.winCheck(this.player_move)) {
-            return this.gameResult;
-        } else {
-            this.Turn();
+            if (this.winCheck(this.player_move)) {
+                this.incrementScore();
+                return this.gameResult;
+            } else {
+                this.Turn();
+            }
         }
     }
 };
@@ -98,6 +109,11 @@ Logic.Turn = function() {
 Logic.getPlayer = function() {
     return this.player_move;
 };
+
+Logic.resetScores = function() {
+    this.playerXscore = 0;
+    this.playerOscore = 0;
+}
 
 Logic.resetBoard = function() {
     this.boardValues = ['', '', '', '', '', '', '', '', ''];

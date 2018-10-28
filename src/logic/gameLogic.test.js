@@ -91,8 +91,9 @@ it("should return 0", () => {
 });
 
 it("Should return draw", () => {
-    Logic.turnCounter = 9;
-    expect(Logic.move('X')).toBe("draw");
+    Logic.resetBoard();
+    Logic.turnCounter = 8;
+    expect(Logic.move(1)).toBe("draw");
 });
 
 it("Should return O because O is the winner", () => {
@@ -103,4 +104,16 @@ it("Should return O because O is the winner", () => {
     Logic.move(5);
     Logic.move(8);
     expect(Logic.move(6)).toBe('O');
+});
+
+it("Should return playerOScore 1", () => {
+    Logic.resetScores();
+    Logic.resetBoard();
+    Logic.move(1);
+    Logic.move(4);
+    Logic.move(2);
+    Logic.move(5);
+    Logic.move(8);
+    Logic.move(6);
+    expect(Logic.playerOscore).toBe(1);
 });
