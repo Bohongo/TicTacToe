@@ -1,6 +1,8 @@
 const _ = require('lodash');
+displayLeaderboard();
 document.getElementById('resetGame').addEventListener('click', reset);
 document.getElementById('resetScores').addEventListener('click', resetscores);
+
 var id = 0;
 $('.square').click(function() {
     id = $(this).attr('id');
@@ -17,6 +19,25 @@ $('.square').click(function() {
         checkWin(data);
     })
 });
+
+function displayLeaderboard() {
+  fetch('/api/leaderboards/').then(function(res) {
+    return res.json();
+  }).then(function(data) {
+    //Appenda gögnum hér í table
+    for(var i = 0; i<5; i++) {
+        var row = document.getElementById('leaders').insertRow(i);
+        var name = row.insertCell(0);
+        var gameCount = row.insertCell(1);
+        var winCount = row.insertCell(2);
+        var winPercentage = row.insertCell(3);
+        name.innerHTML = data.Leader[i].name;
+        gameCount.innerHTML = data.Leader[i].totalgames;
+        winCount.innerHTML = data.Leader[i].wincount;
+        winPercentage.innerHTML = ((data.Leader[i].wincount/data.Leader[i].totalgames)*100).toFixed(2);
+    }
+});
+}
 
 function checkWin(data) {
     if (data.Player.gameResult == 'X' || data.Player.gameResult == 'O') {
