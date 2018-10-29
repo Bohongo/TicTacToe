@@ -4,10 +4,12 @@ const APP = "https://bohongo.herokuapp.com/";
 let page;
 let browser;
 
+jest.setTimeout(15000);
+
 beforeEach(async () => {
     browser = await puppeteer.launch({
         headless: true,
-        slowMo: 0
+        slowMo: 80
     });
     page = await browser.newPage();
 });
@@ -23,7 +25,7 @@ describe("reset score", () => {
         });
         await page.click('#resetScores');
         await page.waitFor(1000);
-    }, 20000);
+    });
 });
 
 describe("reset game", () => {
@@ -33,7 +35,7 @@ describe("reset game", () => {
         });
         await page.click('#resetGame');
         await page.waitFor(1000);
-    }, 20000);
+    });
 });
 /*
 describe("board test", () => {
