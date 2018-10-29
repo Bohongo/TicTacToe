@@ -10,18 +10,28 @@
 </head>
 
 <body>
-  <div class="grid-container">
+  <div class="container">
     <div class="row">
       <div class="col-lg-12 title">
         <h1 id="playerTitle">Player X, it's your move</h1>
       </div>
     </div>
-    <div class="col-lg-4">
-
-    </div>
     <div class="row">
       <div class="col-lg-4">
-        <table id="board">
+        <h1 class="leaderboard-title">Leaderboard</h1>
+        <table class="leaderboard">
+          <tr>
+            <th>Name</th>
+            <th>Games</th>
+            <th>Wins</th>
+            <th>Win %</th>
+            <tbody id="leaders">
+
+            </tbody>
+        </table>
+      </div>
+      <div class="col-lg-4">
+        <table id="board" class="game-board">
           <tr>
             <td class="square" id="1"></td>
             <td class="square" id="2"></td>
@@ -39,12 +49,14 @@
           </tr>
         </table>
       </div>
-      <div class="col-lg-3">
+      <div class="col-lg-4">
         <div class="scores">
 
           <p id="scoreTitle">Scores</p>
           <p id="PlayerX">Player X:<span id="playerXscore">0</span></p>
           <p id="PlayerO">Player O:<span id="playerOscore">0</span></p>
+          <button type="button" name="button" class="btn btn-success" id="resetScores">Reset Scores</button>
+
         </div>
       </div>
     </div>

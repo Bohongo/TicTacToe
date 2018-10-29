@@ -3,14 +3,22 @@
   padding: 0;
   font-family: 'Press Start 2P', cursive;
 }
+
 h1 {
   font-size: 25px;
 }
 body {
   background: #F0F8FF;
 }
-
-table {
+table.leaderboard{
+  width: 100%;
+  margin-top: 10%;
+  table-layout: fixed;
+  overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
+}
+table.game-board {
   table-layout: fixed;
   overflow: hidden;
   margin-left: auto;
@@ -21,7 +29,7 @@ table {
   border-collapse: collapse;
 }
 
-td {
+table.game-board td {
  border: 6px solid black;
  font-size:25pt;
  text-align: center;
@@ -30,26 +38,32 @@ td {
  text-shadow: 5px 5px black;
 }
 
-td::after {
+table.game-board td::after {
   content: '';
   display: block;
 }
 
-td:first-of-type {
+table.game-board td:first-of-type {
   border-left-color: transparent;
   border-top-color: transparent;
 }
-td:nth-of-type(2) {
+table.game-board td:nth-of-type(2) {
   border-top-color: transparent;
 }
-td:nth-of-type(3) {
+table.game-board td:nth-of-type(3) {
   border-right-color: transparent;
   border-top-color: transparent;
 }
-tr:nth-of-type(3) td {
+table.game-board tr:nth-of-type(3) td {
   border-bottom-color: transparent;
 }
 
+.leaderboard-title{
+  margin-top: 10%;
+}
+.container{
+  width: 94%
+}
 .title {
   text-align: center;
   margin-left: 3%;
@@ -59,6 +73,9 @@ tr:nth-of-type(3) td {
   margin-top: 20%;
 }
 
+#resetScores {
+  margin-top: 4%;
+}
 #scoreTitle {
   font-size: 20px;
 }

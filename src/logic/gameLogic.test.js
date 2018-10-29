@@ -117,3 +117,40 @@ it("Should return playerOScore 1", () => {
     Logic.move(6);
     expect(Logic.playerOscore).toBe(1);
 });
+it("Should return playerOScore 0", () => {
+    Logic.resetScores();
+    Logic.resetBoard();
+    Logic.move(1);
+    Logic.move(4);
+    Logic.move(2);
+    Logic.move(5);
+    Logic.move(8);
+    Logic.move(6);
+    Logic.resetScores();
+    expect(Logic.playerOscore).toBe(0);
+});
+it("Should return playerXScore 1", () => {
+    Logic.resetScores();
+    Logic.resetBoard();
+    Logic.move(2);
+    Logic.move(1);
+    Logic.move(5);
+    Logic.move(4);
+    Logic.move(8);
+    expect(Logic.playerXscore).toBe(1);
+});
+it("gameResult should be empty", () => {
+    Logic.resetBoard();
+    Logic.move(2);
+    expect(Logic.gameResult).toBe("");
+});
+it("gameResult should be X", () => {
+    Logic.resetScores();
+    Logic.resetBoard();
+    Logic.move(2);
+    Logic.move(1);
+    Logic.move(5);
+    Logic.move(4);
+    Logic.move(8);
+    expect(Logic.gameResult).toBe("X");
+});

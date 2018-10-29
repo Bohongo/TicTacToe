@@ -106,10 +106,6 @@ Logic.Turn = function() {
     }
 };
 
-Logic.getPlayer = function() {
-    return this.player_move;
-};
-
 Logic.resetScores = function() {
     this.playerXscore = 0;
     this.playerOscore = 0;
