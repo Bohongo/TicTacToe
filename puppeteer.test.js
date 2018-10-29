@@ -32,3 +32,13 @@ describe("reset score", () => {
     await page.waitFor(1000);
   }, 20000);
 });
+
+describe("reset game", () => {
+  test("Press the resetGame button", async () => {
+    await page.goto(APP, {
+      "waitUntil": "networkidle0"
+    });
+    await page.click('#resetGame');
+    await page.waitFor(1000);
+  }, 20000);
+});
