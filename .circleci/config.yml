@@ -35,11 +35,11 @@ jobs:
 
       - run:
           name: Creating artifact folder
-          command: mkdir /artifacts
+          command: mkdir -p ~/artifacts
       # run tests!
       - run: npm test
       - store_artifacts:
-          path: ~repo/artifacts
+          path: ~/artifacts
 
   deploy:
     machine:
