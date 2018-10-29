@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "nodemon",
     "test": "jest ./src/ app --coverage",
-    "preset": "jest-puppeteer",
+    "preset": "jest puppeteer",
     "start": "node server.js",
     "watch": "jest --watchAll",
     "build": "webpack",
