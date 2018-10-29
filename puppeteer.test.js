@@ -10,8 +10,8 @@ describe("puppeteer tests", () => {
     beforeEach(async () => {
         browser = await puppeteer.launch({
             headless: true,
-            slowMo: 80
-        });
+            slowMo: 0,
+        }, '-no-sandbox', '-disable-setuid-sandbox');
         page = await browser.newPage();
     });
 
