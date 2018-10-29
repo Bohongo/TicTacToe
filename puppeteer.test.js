@@ -42,3 +42,14 @@ describe("reset game", () => {
     await page.waitFor(1000);
   }, 20000);
 });
+/*
+describe("board test", () => {
+  test("Press square 1 in board", async () => {
+    await page.goto(APP, {
+      "waitUntil": "networkidle0"
+    });
+    await page.click('1');
+    await page.waitFor(1000);
+  }, 20000);
+
+});*/
