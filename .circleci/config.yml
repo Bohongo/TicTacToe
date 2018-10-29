@@ -50,7 +50,7 @@ jobs:
       - checkout
       - run:
           name: Deploy Master to Heroku
-          command: git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP.git master
+          command: git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP.git dev:master
 
   deploy_production:
     machine:
@@ -61,7 +61,7 @@ jobs:
       - checkout
       - run:
           name: Deploy Master to Heroku
-          command: git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_PRODUCTION_APP.git master
+          command: git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_PRODUCTION_APP.git dev:master
 
   e2e:
     docker:
