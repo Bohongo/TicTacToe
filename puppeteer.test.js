@@ -1,7 +1,6 @@
 const puppeteer = require('puppeteer');
 const APP = "https://bohongo.herokuapp.com/";
 
-
 describe("puppeteer tests", () => {
     let page;
     let browser;
