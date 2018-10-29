@@ -39,7 +39,7 @@ jobs:
       # run tests!
       - run: npm test
       - store_artifacts:
-          paths: ~repo/artifacts
+          path: ~repo/artifacts
 
   deploy:
     machine:
