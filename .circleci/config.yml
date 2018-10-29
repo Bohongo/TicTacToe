@@ -33,11 +33,13 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
 
-
+      - run:
+          name: Creating artifact folder
+          command: mkdir /artifacts
       # run tests!
       - run: npm test
       - store_artifacts:
-          paths: ~repo/coverage/lcov-report/
+          paths: ~repo/artifacts
 
   deploy:
     machine:
