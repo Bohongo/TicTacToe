@@ -52,6 +52,17 @@ jobs:
           name: Deploy Master to Heroku
           command: git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP.git master
 
+  deploy_production:
+    machine:
+        enabled: true
+    working_directory: ~/repo
+
+    steps:
+      - checkout
+      - run:
+          name: Deploy Master to Heroku
+          command: git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_PRODUCTION_APP.git master
+
   e2e:
     docker:
       # specify the version you desire here
@@ -98,3 +109,11 @@ workflows:
           requires:
             - build
             - deploy
+      - deploy_production:
+          requires:
+            - build
+            - deploy
+            - e2e
+          filters:
+              branches:
+                only: master
