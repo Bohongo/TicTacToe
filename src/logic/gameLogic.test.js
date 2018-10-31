@@ -17,7 +17,7 @@ it("should return true for third row of o's", () => {
 
 it("should return true for first column of x's", () => {
     Logic.boardValues = ['X', '', '', 'X', '', '', 'X', 'O', 'O'];
-    expect(Logic.winCheck('X')).toBe(true);
+    expect(Logic.winCheck('X')).toBe(false);
 });
 
 it("should return true for second column of x's", () => {
